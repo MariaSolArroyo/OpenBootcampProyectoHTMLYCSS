@@ -1,0 +1,129 @@
+@mixin btn-base {
+    padding: 0.25rem 1rem;
+    border-radius: 0.30rem;
+    
+}
+@mixin btn-sm-modify {
+    font-size: 0.75rem;
+    padding: 0.1rem 1rem;
+}
+
+//color principal
+$color-main: #FC427B;
+$footer-color: #f0ccd7;
+
+.btn-main{
+    @include btn-base();
+    background-color: $color-main;
+    color: white;    
+    border: solid 1px $color-main;
+
+    &:hover{
+        background-color: white;
+        color: $color-main;
+    }
+
+    &-s{
+        @extend .btn-main;
+        @include btn-sm-modify();
+    }
+
+}
+
+.btn-sec{
+    @include btn-base();    
+    color: #2C3A47;
+    background-color: transparent;
+    border: none;
+
+    &:hover{
+        color: #888;
+    }
+
+    &-s{
+        @extend .btn-sec;
+        @include btn-sm-modify();
+    }
+}
+
+//main-menu
+.main-menu{
+    margin-bottom: 0;
+    li{
+        font-size: 0.75rem;
+        list-style: none;
+        display: inline;
+        margin-right: 2rem;
+
+        a{
+            color: #2C3A47;
+            text-decoration: none;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.icon-sm{
+
+    i{
+        font-size: 0.9rem;
+        padding: 0.3rem 0.45rem;
+        border-radius: 50%;
+        color: $color-main;
+        box-shadow: 0 0 2px #2C3A47;
+    }
+}
+
+.benefit{
+    display: flex;
+    flex-direction: column;
+
+    .icon{
+        color: $color-main;
+        font-size: 6rem;
+        text-align: center;
+
+    }
+
+    .description{
+        .tittle{
+            font-size: 2rem;
+            text-align: center;
+
+        }
+        .text{
+            color: #888;
+            font-weight: 600;
+            text-align: center;
+
+        }
+    }
+    .cta{
+        color: $color-main;
+        font-weight: 600;
+        margin-top: 3rem;
+        text-align: center;
+    }
+}
+
+.icon-desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    .icon{
+        padding: 0;
+        color: $color-main;
+        font-size: 7rem;
+    }
+
+    .tittle{
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: -1rem;
+    }
+}

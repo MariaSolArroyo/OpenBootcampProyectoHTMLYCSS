@@ -1,0 +1,256 @@
+//importo
+
+@use "components";
+
+@mixin section-display{
+    width: 100%;
+    max-width: 992px;
+    margin: auto;
+    padding: 3rem;
+} 
+    
+html{
+    min-width: 100vw;
+}
+//estilos globales
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.nav{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 3rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo img{
+    max-width: 5rem;
+}
+
+.sec-home{
+    display: flex;
+    @include section-display();
+    align-items: center;
+
+    .home-cta{
+        flex: 1;
+        .cta-text{
+            color: components.$color-main;
+
+         }
+
+         .home-tittle{
+            width: 20rem;
+            font-size: 3rem;
+         }
+
+         .home-description{
+            width: 300px;
+         }
+
+         .lead-magnet{
+            .input-col{
+                max-width: 200px
+            }
+         }
+    }
+}
+
+.sec-features{
+    @include section-display();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .intro{
+        text-align: center;
+
+        h3{
+            font-size: 1.8rem;
+        }
+
+        p{
+            font-size: 1rem;
+            color: #777;
+        }
+    }
+
+    .features{
+
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        .text{
+            padding: 2rem 0;
+            flex: 1;
+            .feature{
+                
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                
+
+                .description{
+                    margin-left: 1rem;
+                    max-width: 20rem;
+                    .description-tittle{
+                        font-size: 0.9rem;
+                    }
+
+                    .description-text{
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+
+
+        }
+
+        .image{
+            max-width: 25rem;
+        }
+    }
+}
+
+.sec-benefits{
+    border-top: 1px solid #ddd;
+   .intro{
+    @extend .sec-features, .intro;
+}
+    .benefit-cards{
+        width: 100%;
+        padding: 0 2rem 2rem 2rem;
+    }
+
+    
+}
+
+
+.sec-kpis{
+    width: 100%;
+    background-color: components.$color-main;
+    color: white;
+    padding: 3rem;
+
+    .kpi{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .number{
+            font-size: 2.5rem;
+            font-weight: 600;
+
+        }
+
+        .desc{
+            font-size: 0.9rem;
+            color: #ffffffaa ;
+        }
+    }
+}
+
+.sec-onboarding{
+
+    .intro{
+        @extend .sec-features, .intro;
+    }
+
+    .steps{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 8rem 5rem 8rem;
+
+
+        .step-separator{
+            flex: 1;
+            border-top: 2px solid #ddd;
+            margin: 0 1rem;
+        }
+    }
+}
+
+
+.sec-footer-cta{
+
+        background-color: components.$footer-color;
+        padding: 5rem;
+        background-image: url("../assets/img/astro.png");
+        background-repeat: no-repeat;
+        background-position:100%;
+        background-size: contain;
+        background-size: 70vh;
+
+        .footer-cta{
+            width: 50%;
+
+
+            .cta-tittle{
+                font-size: 1rem;
+            }
+    
+            .cta-description{
+                font-size: 0.9rem;
+            }
+        }
+       
+}
+
+
+@media (max-width: 768px){
+
+    .sec-onboarding{
+        .steps{
+            flex-direction: column;
+
+            
+            .icon-desc{
+
+                .tittle{
+                    text-align: center;
+                }
+            }
+
+        }
+    }
+
+    .sec-footer-cta{
+        background-image: none;
+        align-items: center;
+        justify-content: center;
+
+        .footer-cta{
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+
+    .sec-benefits{
+
+        .intro{
+            text-align: center ;
+        }
+        .intro h3{
+            font-size: 2rem;
+
+        }
+    }
+
+    .sec-features{
+        .intro p{
+            font-size: 1rem;
+        }
+        .intro h3{
+            font-size: 2rem;
+        }
+    }
+    
+}
